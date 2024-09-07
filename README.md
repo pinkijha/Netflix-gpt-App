@@ -18,6 +18,9 @@
         - Title & Description 
         - MovieSuggestions
          - Movie List * n
-- NetflixGPT
+# NetflixGPT
     - Search Bar
     - Movie Suggestions
+    - Header
+    - 
+    - 
