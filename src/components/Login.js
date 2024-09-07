@@ -1,12 +1,28 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Header from "./Header"
+import { checkValidData } from '../utils/Validate';
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  const name = useRef(null);
+  const email = useRef(null);
+  const password = useRef(null);
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
   };
+
+  const handleButtonClick = () =>{
+    // Validate the form data
+    const msg = checkValidData(name.current.value, email.current.value, password.current.value);
+    setErrorMessage(msg)
+    console.log(msg)
+    console.log(email.current.value);
+    console.log(password.current.value);
+  
+  }
 
   return (
     <div className='relative'>
@@ -18,20 +34,26 @@ const Login = () => {
       </div>
 
       <div className='relative  flex justify-center '>
-        <form className='absolute top-28 bg-black p-12'>
+        <form onSubmit={(e) => e.preventDefault()} className='absolute top-28 bg-black p-12'>
 
             <h1 className='text-white m-4 text-3xl font-bold'>
               {isSignInForm ? "Sign In" : "Sign up" }</h1>
 
+              {!isSignInForm && (<div className='m-4 '><input ref={name} className='mt-2 w-full py-3 px-7 rounded bg-black text-white border border-grayText  focus:border-white'  type='text' placeholder='Full Name'/>
+                </div>)}
+
             <div className='m-4'><input className='mt-2 w-full py-3 px-12
-             rounded bg-black border border-grayText focus:border-white' 
-             type='text' placeholder='Email or mobile number'/>
+             rounded bg-black text-white border border-grayText focus:border-white' 
+             type='text' ref={email} placeholder='Email or mobile number'/>
             </div>
 
-            <div className='m-4 '><input className='w-full py-3 px-7 rounded bg-black border border-grayText  focus:border-white'  type='password' placeholder='Password'/>
-            </div>
+            <div className='m-4 '><input ref={password} className='w-full py-3 px-7 
+            rounded bg-black text-white border border-grayText  focus:border-white'  type='password' placeholder='Password'/>
+            </div>            
+            <p className=' m-4 text-red-600 font-bold text-lg'> {errorMessage}</p>
 
-            <div className='m-4'><button className=' bg-netflixRed font-medium text-white w-full py-3 px-7 rounded'>
+            <div className='m-4'><button onClick={handleButtonClick}  className=' bg-netflixRed 
+            font-medium text-white w-full py-3 px-7 rounded'>
             {isSignInForm ? "Sign In" : "Sign up" }</button>
               </div>
 
