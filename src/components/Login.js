@@ -18,10 +18,10 @@ const Login = () => {
     // Validate the form data
     const msg = checkValidData(name.current.value, email.current.value, password.current.value);
     setErrorMessage(msg)
-    console.log(msg)
-    console.log(email.current.value);
-    console.log(password.current.value);
-  
+    // console.log(msg)
+    // console.log(email.current.value);
+    // console.log(password.current.value); 
+    // console.log(name.current.value) 
   }
 
   return (
