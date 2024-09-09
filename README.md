@@ -32,4 +32,7 @@
     - Create Signup user Account 
     - Implement Sign In user API
     - Created our Redux Store with userSlice
+    - Implemented SignOut
+    - Update Profile API Call
+    - 
     
