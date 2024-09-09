@@ -17,7 +17,7 @@
         - trailor in Background
         - Title & Description 
         - MovieSuggestions
-         - Movie List * n
+        - Movie List * n
 # NetflixGPT
     - Search Bar
     - Movie Suggestions
@@ -27,4 +27,9 @@
     - Sign Up Form
     - Form Validation
     - useRef Hooks
-    - 
+    - FireBase setup
+    - Deploying our app to production
+    - Create Signup user Account 
+    - Implement Sign In user API
+    - Created our Redux Store with userSlice
+    
