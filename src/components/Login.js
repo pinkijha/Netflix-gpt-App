@@ -3,6 +3,7 @@ import Header from "./Header"
 import { checkValidData } from '../utils/Validate';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase"
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -11,6 +12,8 @@ const Login = () => {
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
+
+  const navigate = useNavigate();
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
@@ -36,6 +39,9 @@ const Login = () => {
     // Signed up 
     const user = userCredential.user;
     console.log(user);
+    
+    navigate("/browse")
+
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -52,6 +58,7 @@ const Login = () => {
     // Signed in 
     const user = userCredential.user;
     console.log(user);
+    navigate("/browse")
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -71,8 +78,8 @@ const Login = () => {
         <div className="absolute inset-0 bg-black/60 "></div>
       </div>
 
-      <div className='relative  flex justify-center '>
-        <form onSubmit={(e) => e.preventDefault()} className='absolute top-28 bg-black p-12'>
+      <div className='relative  flex justify-center'>
+        <form onSubmit={(e) => e.preventDefault()} className=' w-[450px] absolute top-28 bg-black p-8'>
 
             <h1 className='text-white m-4 text-3xl font-bold'>
               {isSignInForm ? "Sign In" : "Sign up" }</h1>
@@ -88,7 +95,7 @@ const Login = () => {
             <div className='m-4 '><input ref={password} className='w-full py-3 px-7 
             rounded bg-black text-white border border-grayText  focus:border-white'  type='password' placeholder='Password'/>
             </div>            
-            <p className=' m-4 text-red-600 font-bold text-lg'> {errorMessage}</p>
+            <p className=' m-4 text-red-600  text-md'> {errorMessage}</p>
 
             <div className='m-4'><button onClick={handleButtonClick}  className=' bg-netflixRed 
             font-medium text-white w-full py-3 px-7 rounded'>
