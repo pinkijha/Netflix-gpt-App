@@ -48,17 +48,20 @@ const Header = () => {
   
 
   return (
-    <div className=' flex justify-between w-screen absolute px-8 py-2 z-30 bg-gradient-to-b from-black '>
+    <div className=' flex justify-between w-screen absolute px-8 py-2 z-10 bg-gradient-to-b from-black '>
       <div>
       <img className='w-48 ' src={LOGO} 
       alt="logo" />
       </div>
       {user &&      
-      <div className='flex'>
+      <div className='box-border flex p-2'>
+        <button className='py-2 px-4 mx-4 h-10 mt-5 bg-gradient-to-r from-purple-500 to-indigo-500
+         hover:from-indigo-500 hover:to-purple-500 text-white font-semibold rounded-lg shadow-lg transform hover:scale-105 transition duration-300'>
+          GPT Search</button>
         <img  className='w-[40px] h-[40px] my-5 mx-2 rounded-2xl'
-        src={user.photoURL} alt='userIcon'
+        src={user?.photoURL} alt='userIcon'
         />
-        <button onClick={handleSignOut} className='font-bold text-lg text-white'>Log Out</button>
+        <button onClick={handleSignOut} className='font-bold text-lg rounded-lg text-white'>Log Out</button>
       </div>
       }
     </div>
