@@ -20,7 +20,11 @@
         - Movie List * n
     - Secondary Container
         - MovieList * n
-        - Cards * n
+            - Cards * n
+        - PopularMovies
+        - HorrorMovies
+        - ComedyMovies
+        - NewMoviesList
             
 # NetflixGPT
     - Search Bar
