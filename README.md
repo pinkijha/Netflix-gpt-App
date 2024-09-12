@@ -18,6 +18,10 @@
         - Title & Description 
         - MovieSuggestions
         - Movie List * n
+    - Secondary Container
+        - MovieList * n
+        - Cards * n
+            
 # NetflixGPT
     - Search Bar
     - Movie Suggestions
@@ -40,5 +44,7 @@
     - Add hardcoded values to the constant file
     - Registered TMDB API and create an App & get access Tokens
     - Get Data from TMDB Now playing movies List API
+    - Fetch data from TMDB API and Update Store
     
+
     
