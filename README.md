@@ -58,5 +58,11 @@
     - Embeded the youtube video & make it Autoplay And mute
     - Add Taileind Class to main Container
     - Build Scondary Component
+    - Build Movie List
+    - Build Movie Cards
+    - TMDB Image Url in constant
+    - Add add Tailwind CSS in that
+    - usePopularMovies Custom Hooks
+
 
     
