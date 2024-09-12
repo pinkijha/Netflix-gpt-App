@@ -45,6 +45,14 @@
     - Registered TMDB API and create an App & get access Tokens
     - Get Data from TMDB Now playing movies List API
     - Fetch data from TMDB API and Update Store
+    - Custom Hook for now Playinh movie
+    - Create MovieSlice
+    - Update Store with movie data
+    - Create Component for mainContainer & Secondary Container
+    - Fetch Data from Trailer video
+    - Update store with Trailer Video Data
+    - Embeded the youtube video & make it Autoplay And mute
+    - Add Taileind Class to main Container
     
 
     
