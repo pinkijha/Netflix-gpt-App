@@ -53,6 +53,6 @@
     - Update store with Trailer Video Data
     - Embeded the youtube video & make it Autoplay And mute
     - Add Taileind Class to main Container
-    
+    - Build Scondary Component
 
     
