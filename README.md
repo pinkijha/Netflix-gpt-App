@@ -63,6 +63,8 @@
     - TMDB Image Url in constant
     - Add add Tailwind CSS in that
     - usePopularMovies Custom Hooks
+    - Build GPT Search 
+    - 
 
 
     
