@@ -104,10 +104,12 @@ const Login = () => {
             <h1 className='text-white m-4 text-3xl font-bold'>
               {isSignInForm ? "Sign In" : "Sign up" }</h1>
 
-              {!isSignInForm && (<div className='m-4 '><input ref={name} className='mt-2 w-full py-3 px-7 rounded bg-black text-white border border-grayText  focus:border-white'  type='text' placeholder='Full Name'/>
+              {!isSignInForm && (<div className='m-4 '><input ref={name} className='mt-2 w-full py-3 px-7 
+              rounded bg-black text-white border border-grayText  focus:border-white'  
+              type='text' placeholder='Full Name'/>
                 </div>)}
 
-            <div className='m-4'><input className='mt-2 w-full py-3 px-12
+            <div className='m-4'><input className='mt-2 w-full py-3 px-7
              rounded bg-black text-white border border-grayText focus:border-white' 
              type='text' ref={email} placeholder='Email or mobile number'/>
             </div>
