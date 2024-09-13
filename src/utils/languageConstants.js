@@ -5,7 +5,7 @@ const lang = {
     },
     Hindi:{
         search: "खोज",
-        gptSearchPlaceholder: "",
+        gptSearchPlaceholder: "आप क्या देखने के मूड में हैं?",
     },
     Marathi:{
         search: "शोध",

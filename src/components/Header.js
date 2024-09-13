@@ -7,11 +7,12 @@ import { addUser, removeUser } from '../utils/userSlice';
 import { useDispatch } from 'react-redux';
 import { LOGO, SUPPORTED_LANGUAGE } from '../utils/Constant';
 import { toggleSearchView } from '../utils/gptSlice';
+import { changeLanguage } from '../utils/configSlice';
 
 const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
-  
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
 
   
   const dispatch = useDispatch();
@@ -19,6 +20,10 @@ const Header = () => {
   // Toggle on GPT Search Button
   const handleGPTSearchClick = () =>{
     dispatch(toggleSearchView());
+  }
+
+  const handleLanguageChange = (e) =>{
+    dispatch(changeLanguage(e.target.value));
   }
 
   const handleSignOut =() =>{
@@ -62,18 +67,18 @@ const Header = () => {
       </div>
       {user &&      
       <div className='flex p-2'>
-        <select className='h-[40px] px-2 mt-[20px] rounded-lg
-         bg-zinc-700 text-white'>
+        {showGptSearch && (<select className='h-[40px] px-2 mt-[20px] rounded-lg
+         bg-zinc-700 text-white' onChange={handleLanguageChange}>
           {SUPPORTED_LANGUAGE.map((lang) => ( 
             <option key={lang.identifier} value={lang.identifier}>
               {lang.name}
             </option>
           ))}
-        </select>
+        </select>)}
 
         <button onClick={handleGPTSearchClick} className='py-2 px-4 mx-4 h-10 mt-5 bg-gradient-to-r from-purple-500 to-indigo-500
          hover:from-indigo-500 hover:to-purple-500 text-white font-semibold rounded-lg shadow-lg transform hover:scale-105 transition duration-300'>
-          GPT Search</button>
+          {showGptSearch ?  "Home Page" :"GPT Search"}</button>
 
         <img  className='w-[40px] h-[40px] my-5 mx-2 rounded-2xl'
         src={user?.photoURL} alt='userIcon'
