@@ -64,7 +64,9 @@
     - Add add Tailwind CSS in that
     - usePopularMovies Custom Hooks
     - Build GPT Search 
-    - 
+    - GPT Search Page
+    - GPT Search Bar
+    - (Bonus) multi-language features in our App
 
 
     
