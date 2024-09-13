@@ -9,7 +9,7 @@ const GPTSearch = () => {
       <div className='absolute -z-10'>
       <img className='' src={BACKGORUND_IMAGE}
       alt="bg-img" />
-        <div className="absolute inset-0 bg-black/70 "></div>
+        <div className="absolute inset-0 bg-black/50 "></div>
       </div>
 
       <GptSearchBar/>
