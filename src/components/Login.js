@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import { auth } from "../utils/firebase"
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
-import { USER_AVATAR } from '../utils/Constant';
+import { USER_AVATAR, BACKGORUND_IMAGE } from '../utils/Constant';
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -93,7 +93,7 @@ const Login = () => {
     <div className='relative'>
         <Header/>
       <div className='absolute'>
-      <img className='' src='https://assets.nflxext.com/ffe/siteui/vlv3/dae1f45f-c2c5-4a62-8d58-6e1b0c6b2d8e/6d1fb8a4-5844-42a4-9b01-1c6c128acf19/IN-en-20240827-TRIFECTA-perspective_WEB_c292a608-cdc6-4686-8dc8-405bfcf753af_large.jpg' 
+      <img className='' src={BACKGORUND_IMAGE}
       alt="bg-img" />
         <div className="absolute inset-0 bg-black/60 "></div>
       </div>
@@ -135,7 +135,8 @@ const Login = () => {
               <div className='m-4'><input type='checkbox' /> <label className='text-white'>Remember me</label></div>
 
               <div className='m-4'><span className='text-zinc-400 mr-1'> {isSignInForm ? "New to Netflix?" : "Already have account?" }</span>
-                <button type='button' onClick={toggleSignInForm}  className='font-medium text-white'>{isSignInForm ? "Sign up" : "Sign In" }</button></div>
+                <button type='button' onClick={toggleSignInForm}  
+                className='font-medium text-white'>{isSignInForm ? "Sign up" : "Sign In" }</button></div>
 
                 <small className='text-white m-4'>
                 This page is protected by Google reCAPTCHA 

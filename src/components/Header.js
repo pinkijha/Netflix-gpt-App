@@ -6,17 +6,19 @@ import { useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
 import { useDispatch } from 'react-redux';
 import { LOGO } from '../utils/Constant';
+import { toggleSearchView } from '../utils/gptSlice';
 
 const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
+  
 
   
   const dispatch = useDispatch();
 
   // Toggle on GPT Search Button
   const handleGPTSearchClick = () =>{
-    
+    dispatch(toggleSearchView());
   }
 
   const handleSignOut =() =>{
