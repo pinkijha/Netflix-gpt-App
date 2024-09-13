@@ -6,6 +6,7 @@ import SecondaryContainer from './SecondaryContainer';
 import usePopularMovies from '../hooks/usePopularMovies';
 import useUpcomingMovies from '../hooks/useUpcomingMovies';
 import useTopRatedMovies from '../hooks/useTopRatedMovies';
+import GPTSearch from './GPTSearch';
 
 const Browse = () => {
   useNowPlayingMovies();
@@ -16,6 +17,7 @@ const Browse = () => {
   return (
     <div>
       <Header/>
+      <GPTSearch/>
       <MainContainer/>
       <SecondaryContainer/>
     </div>

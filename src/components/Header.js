@@ -14,6 +14,11 @@ const Header = () => {
   
   const dispatch = useDispatch();
 
+  // Toggle on GPT Search Button
+  const handleGPTSearchClick = () =>{
+    
+  }
+
   const handleSignOut =() =>{
     signOut(auth).then(() => {
       // Sign-out successful.
@@ -55,7 +60,7 @@ const Header = () => {
       </div>
       {user &&      
       <div className='box-border flex p-2'>
-        <button className='py-2 px-4 mx-4 h-10 mt-5 bg-gradient-to-r from-purple-500 to-indigo-500
+        <button onClick={handleGPTSearchClick} className='py-2 px-4 mx-4 h-10 mt-5 bg-gradient-to-r from-purple-500 to-indigo-500
          hover:from-indigo-500 hover:to-purple-500 text-white font-semibold rounded-lg shadow-lg transform hover:scale-105 transition duration-300'>
           GPT Search</button>
         <img  className='w-[40px] h-[40px] my-5 mx-2 rounded-2xl'
